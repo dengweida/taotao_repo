@@ -1,14 +1,16 @@
 package com.taotao.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 首页跳转
+ * 页面跳转
  * @author zoushiming
  *
  */
 
-
+@Controller
 public class PageController {
    
 	
@@ -17,5 +19,8 @@ public class PageController {
 	return "index";
 }
 
-	
+	@RequestMapping("/{page}")
+	public String showPage(@PathVariable String page){
+		return page;
+	}
 }
